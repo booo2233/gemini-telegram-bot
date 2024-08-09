@@ -286,7 +286,14 @@ async def telegram_bot(update : Update, context : ContextTypes.DEFAULT_TYPE):
                      # Get the directory path of the current script
                      current_directory_path = os.path.dirname(current_file_path)
                      os.chdir(current_directory_path)
-  
+                except UnicodeDecodeError:
+                     await update.message.reply_text("The pdf you send was non UTF-8 characters Cannot process this file Try with another file or make sure file is not corrupted")
+                     current_file_path = os.path.abspath(__file__)
+                     # Get the directory path of the current script
+                     current_directory_path = os.path.dirname(current_file_path)
+                     os.chdir(current_directory_path)
+                     traceback.print_exc()
+                     logging.error(f"error in except {e} ")
                 except Exception as e:
                      current_file_path = os.path.abspath(__file__)
 
