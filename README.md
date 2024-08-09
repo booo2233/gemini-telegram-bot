@@ -1,6 +1,6 @@
 # telrgram bot
 
- to make the ***code*** work. make **.env** file and Intervariable names for the api key, such as
+ [bot](https://web.telegram.org/k/#@my_genini_bot) to make the ***code*** work. make **.env** file and Intervariable names for the api key, such as
 
 ```
 BOT_TELE_KEY=your api key
