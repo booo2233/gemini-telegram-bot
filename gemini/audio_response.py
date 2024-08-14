@@ -88,6 +88,8 @@ async def voice(file_name, chat_id_messages):
                    voice_text =  response
                    context_history= "user previously asked you :" + str(text) + "\n" + "your Response to users message:" + "```" + str(voice_text) + "```"
                    add_message(chat_id_messages, context_history)
+                   if len(voice_text) > 2000:
+                     voice_text = voice_text[:2000]
                 else:
                     return
                
