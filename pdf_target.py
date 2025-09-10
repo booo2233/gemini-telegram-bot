@@ -1,12 +1,13 @@
 import re
 
+
 def extract_numbers(text):
     # Define the regular expression pattern
-    pattern = r'--start (\d+) --end (\d+)'
-    
+    pattern = r"--start (\d+) --end (\d+)"
+
     # Search for the pattern in the given text
     match = re.search(pattern, text)
-    
+
     # Check if the pattern was found
     if match:
         # Extract the numbers using the capture groups
@@ -18,10 +19,10 @@ def extract_numbers(text):
         return None, None
 
 
-def ex(text:str) -> None:
+def ex(text: str) -> None:
     text_in = text.find(":")
-    text    = text[text_in + 1::]
+    text = text[text_in + 1 : :]
     print(text)
 
+
 ex("--start 47 --end 67 : fg")
- 
